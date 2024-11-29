@@ -1,0 +1,15 @@
+{% extends "school/base.html" %}
+
+{% block title %}
+Додати клас
+{% endblock %}
+
+{% block content %}
+    <h1>Додати</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.clas_name}}<br>
+        {{ form.grade}}<br>
+        <button type="submit" class="btn btn-success">Додати</button>
+    </form>
+{% endblock %}

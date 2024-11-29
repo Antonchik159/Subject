@@ -1,0 +1,21 @@
+{% extends "school/base.html" %}
+
+{% block title %}
+Викладачі
+{% endblock %}
+
+{% block content %}
+    <h1>Усі викладачі</h1>
+    {% if teacher %}
+        {% for teach in teacher %}
+            <div class="alert alert-info mt-4">
+                    <h3>{{ teach.name }} {{ teach.surname }}</h3>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>Нажаль немає данних</h3>
+    {% endif %}
+    <center>
+        <a href="{% url 'create_teacher' %}" class="btn btn-success">Додати викладача</a>
+    </center>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "school/base.html" %}
+
+{% block title %}
+Студенти
+{% endblock %}
+
+{% block content %}
+    <h1>Усі студенти</h1>
+    {% if student %}
+        {% for stud in student %}
+            <div class="alert alert-info mt-4">
+                    <h3>{{ stud.name_sure }} - {{ stud.age }}</h3>
+                    <p>{{ stud.student_class }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>Нажаль немає данних</h3>
+    {% endif %}
+    <center>
+        <a href="{% url 'create_student' %}" class="btn btn-success">Додати студента</a>
+    </center>
+{% endblock %}

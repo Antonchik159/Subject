@@ -1,0 +1,22 @@
+{% extends "school/base.html" %}
+
+{% block title %}
+Предмети
+{% endblock %}
+
+{% block content %}
+    <h1>Усі предмети</h1>
+    {% if subject %}
+        {% for i in subject %}
+            <div class="alert alert-warning mt-4">
+                    <h3>{{ i.subject_name }}</h3>
+                    <p>{{ i.teacher }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>Нажаль немає данних</h3>
+    {% endif %}
+    <center>
+        <a href="{% url 'create_subject' %}" class="btn btn-success">Додати предмет</a>
+    </center>
+{% endblock %}
